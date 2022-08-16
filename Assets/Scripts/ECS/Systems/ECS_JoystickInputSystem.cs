@@ -10,7 +10,8 @@ namespace Immortals
     [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ECS_JoystickInputSystem))]
     public sealed class ECS_JoystickInputSystem : UpdateSystem
     {
-       [SerializeField] private ECS_JoystickInputEvent _joystickInputEvent;
+        [SerializeField] private ECS_JoystickInputEvent _joystickInputEvent;
+        private Vector2 _input;
 
         public override void OnAwake()
         {
@@ -18,12 +19,12 @@ namespace Immortals
 
         public override void OnUpdate(float deltaTime)
         {
-            Vector2 input = Vector2.zero;
+            _input = Vector2.zero;
 
-            input.x = SimpleInput.GetAxis("Horizontal");
-            input.y = SimpleInput.GetAxis("Vertical");
+            _input.x = SimpleInput.GetAxis("Horizontal");
+            _input.y = SimpleInput.GetAxis("Vertical");
 
-            _joystickInputEvent.Publish(input);
+            _joystickInputEvent.Publish(_input);
         }
     }
 }

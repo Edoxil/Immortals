@@ -49,6 +49,10 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: 1defb4a522f2d63458f754a1076ac6aa, type: 2}
   - enabled: 1
+    system: {fileID: 11400000, guid: 76e30c6d3d94c864ca193f75fcd24b42, type: 2}
+  - enabled: 1
     system: {fileID: 11400000, guid: 1bed607eb293e294b8a35f835cab82aa, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: 3a34e1f11ed75da42beaf14d197b8035, type: 2}
   fixedUpdateSystems: []
   lateUpdateSystems: []

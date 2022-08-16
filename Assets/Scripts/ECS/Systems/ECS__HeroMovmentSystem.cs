@@ -10,16 +10,31 @@ namespace Immortals
     [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ECS__HeroMovmentSystem))]
     public sealed class ECS__HeroMovmentSystem : UpdateSystem
     {
-        [SerializeField] ECS_JoystickInputEvent _joystickInputEvent;
+        private Filter _entities;
+
+        private Vector3 _moveDirection;
 
         public override void OnAwake()
         {
+            _entities = World.Filter
+                .With<ECS__HeroTag>()
+                .With<ECS__SpeedComponent>()
+                .With<ECS__DirectionComponent>()
+                .With<ECS__CharacterControllerComponent>()
+                .With<ECS__GravityComponent>();
         }
 
         public override void OnUpdate(float deltaTime)
         {
-            Debug.Log(_joystickInputEvent.BatchedChanges.Pop());
+            ref ECS__GravityComponent gravity = ref _entities.First().GetComponent<ECS__GravityComponent>();
+            ref ECS__SpeedComponent speed = ref _entities.First().GetComponent<ECS__SpeedComponent>();
+            ref ECS__CharacterControllerComponent cc = ref _entities.First().GetComponent<ECS__CharacterControllerComponent>();
+            ref ECS__DirectionComponent direction = ref _entities.First().GetComponent<ECS__DirectionComponent>();
 
+            _moveDirection = direction.Direction;
+            _moveDirection += gravity.Gravity;
+
+            cc.CharacterController.Move((_moveDirection) * speed.Speed * deltaTime);
         }
     }
 }
