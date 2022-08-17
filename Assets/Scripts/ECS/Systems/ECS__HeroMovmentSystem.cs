@@ -10,9 +10,11 @@ namespace Immortals
     [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ECS__HeroMovmentSystem))]
     public sealed class ECS__HeroMovmentSystem : UpdateSystem
     {
+        [SerializeField] private ECS__AnimationRequestEvent _AnimationRequestEvent;
         private Filter _entities;
 
         private Vector3 _moveDirection;
+        private AnimationData _animationData;
 
         public override void OnAwake()
         {
@@ -22,6 +24,11 @@ namespace Immortals
                 .With<ECS__DirectionComponent>()
                 .With<ECS__CharacterControllerComponent>()
                 .With<ECS__GravityComponent>();
+
+            _animationData = new AnimationData();
+            _animationData.ParameterType = ParameterType.Bool;
+            _animationData.Key = AnimationID.RunID;
+            _animationData.EntityID = _entities.First().ID;
         }
 
         public override void OnUpdate(float deltaTime)
@@ -32,6 +39,14 @@ namespace Immortals
             ref ECS__DirectionComponent direction = ref _entities.First().GetComponent<ECS__DirectionComponent>();
 
             _moveDirection = direction.Direction;
+
+            if (_moveDirection.magnitude > 0f)
+                _animationData.BoolData = true;
+            else
+                _animationData.BoolData = false;
+
+            _AnimationRequestEvent.Publish(_animationData);
+
             _moveDirection += gravity.Gravity;
 
             cc.CharacterController.Move((_moveDirection) * speed.Speed * deltaTime);

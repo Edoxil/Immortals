@@ -6,7 +6,7 @@ namespace Immortals
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-    public sealed class ECS__SpeedProvider : MonoProvider<ECS__SpeedComponent>
+    public sealed class ECS__AnimatorProvider : MonoProvider<ECS__AnimatorComponent>
     {
     }
 }

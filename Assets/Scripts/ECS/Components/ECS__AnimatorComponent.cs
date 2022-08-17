@@ -1,4 +1,5 @@
 using Morpeh;
+using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 
 namespace Immortals
@@ -6,7 +7,9 @@ namespace Immortals
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-    public sealed class ECS__SpeedProvider : MonoProvider<ECS__SpeedComponent>
+    [System.Serializable]
+    public struct ECS__AnimatorComponent : IComponent
     {
+        public Animator Animator;
     }
 }
