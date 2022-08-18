@@ -2524,6 +2524,7 @@ GameObject:
   - component: {fileID: 930134026871491477}
   - component: {fileID: 8124732765486747858}
   - component: {fileID: 3476489051417288386}
+  - component: {fileID: 9005479464825687336}
   - component: {fileID: 4863747655918768621}
   m_Layer: 0
   m_Name: Hero
@@ -2657,6 +2658,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedData:
     Animator: {fileID: 2851474361509467028}
+--- !u!114 &9005479464825687336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637606332190982920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730d32b36c0006d45afb5da4e0ca4887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &4863747655918768621
 CharacterController:
   m_ObjectHideFlags: 0

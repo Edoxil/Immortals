@@ -14,7 +14,6 @@ namespace Immortals
         public int IntData;
         public bool BoolData;
         public bool ResetTrigger;
-
     }
 
     public enum ParameterType
