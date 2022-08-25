@@ -28,22 +28,18 @@ namespace Immortals
 
         public override void OnUpdate(float deltaTime)
         {
-            ref ECS__TransformComponent cameraTransform = ref _camera.First().GetComponent<ECS__TransformComponent>();
-            ref ECS__LerpSpeedComponent lerpSpeed = ref _camera.First().GetComponent<ECS__LerpSpeedComponent>();
-            ref ECS__OffsetComponent offset = ref _camera.First().GetComponent<ECS__OffsetComponent>();
-
             ref ECS__TransformComponent target = ref _target.First().GetComponent<ECS__TransformComponent>();
-
 
             if (target.Transform == null)
                 return;
 
+            ref ECS__TransformComponent cameraTransform = ref _camera.First().GetComponent<ECS__TransformComponent>();
+            ref ECS__LerpSpeedComponent lerpSpeed = ref _camera.First().GetComponent<ECS__LerpSpeedComponent>();
+            ref ECS__OffsetComponent offset = ref _camera.First().GetComponent<ECS__OffsetComponent>();
 
             cameraTransform.Transform.position =
                 Vector3.Lerp(cameraTransform.Transform.position, target.Transform.position + offset.Offset,
                 lerpSpeed.LerpSpeed * deltaTime);
-
-
         }
     }
 }
