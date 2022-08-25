@@ -1,33 +1,32 @@
 using Morpeh;
 using System.Threading.Tasks;
+using Unity.IL2CPP.CompilerServices;
 using UnityEngine;
 
 namespace Immortals
 {
-    public class SceneStartup : MonoBehaviour
+    [Il2CppSetOption(Option.NullChecks, false)]
+    [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
+    [Il2CppSetOption(Option.DivideByZeroChecks, false)]
+    [CreateAssetMenu(menuName = "ECS/Initializers/" + nameof(ECS__BattleSceneInitializer))]
+    public sealed class ECS__BattleSceneInitializer : Initializer
     {
         [SerializeField] private SpawnService _spawnService;
         [Space(10)]
         [SerializeField] private ECS__HeroTagProvider _heroPrefab;
         [SerializeField] private GameObject _levelPrefab;
-        [SerializeField] private Installer _installerPrefab;
 
         private GameObject _level;
         private ECS__HeroTagProvider _hero;
-        private Installer _installer;
 
-        private async void Awake()
+        public override async void OnAwake()
         {
             await SpawnLevel();
             await SpawnHero();
-            await SpawnEcsInstaller();
         }
 
-        private async Task SpawnEcsInstaller()
+        public override void Dispose()
         {
-            // Async loading prefab from adressables
-            _installer = _spawnService.Spawn(_installerPrefab, transform);
-            await Task.CompletedTask;
         }
 
         private async Task SpawnLevel()

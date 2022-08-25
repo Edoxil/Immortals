@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace Immortals
 {
-    public class SpawnService : MonoBehaviour
+    [CreateAssetMenu(fileName = nameof(SpawnService), menuName = "Services/"+ nameof(SpawnService), order = 1)]
+    public class SpawnService : ScriptableObject
     {
         public T Spawn<T>(T prefab, Transform parent) where T : Object
         {
