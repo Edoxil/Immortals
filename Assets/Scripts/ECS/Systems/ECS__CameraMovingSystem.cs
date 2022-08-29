@@ -18,7 +18,7 @@ namespace Immortals
             _camera = World.Filter
                 .With<ECS__CameraTag>()
                 .With<ECS__TransformComponent>()
-                .With<ECS__LerpSpeedComponent>()
+                .With<ECS__SpeedComponent>()
                 .With<ECS__OffsetComponent>();
 
             _target = World.Filter
@@ -34,12 +34,12 @@ namespace Immortals
                 return;
 
             ref ECS__TransformComponent cameraTransform = ref _camera.First().GetComponent<ECS__TransformComponent>();
-            ref ECS__LerpSpeedComponent lerpSpeed = ref _camera.First().GetComponent<ECS__LerpSpeedComponent>();
+            ref ECS__SpeedComponent lerpSpeed = ref _camera.First().GetComponent<ECS__SpeedComponent>();
             ref ECS__OffsetComponent offset = ref _camera.First().GetComponent<ECS__OffsetComponent>();
 
             cameraTransform.Transform.position =
                 Vector3.Lerp(cameraTransform.Transform.position, target.Transform.position + offset.Offset,
-                lerpSpeed.LerpSpeed * deltaTime);
+                lerpSpeed.Speed * deltaTime);
         }
     }
 }

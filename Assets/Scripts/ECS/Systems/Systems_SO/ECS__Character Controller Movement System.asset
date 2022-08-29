@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c526d7169c32c354ea928372964a313e, type: 3}
-  m_Name: ECS__Hero Rotation System
+  m_Script: {fileID: 11500000, guid: ec1f079782b396944b1b840c37b82cde, type: 3}
+  m_Name: ECS__Character Controller Movement System
   m_EditorClassIdentifier: 
-  _joystickInputEvent: {fileID: 11400000, guid: be8400b8126207e48bc5ed041280466f, type: 2}
+  _AnimationRequestEvent: {fileID: 11400000, guid: ebd1511650b93fa4fb0f0cdde654e464, type: 2}

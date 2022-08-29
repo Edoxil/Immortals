@@ -8,7 +8,6 @@ namespace Immortals
         private void Start()
         {
             DOTween.Init();
-            Application.targetFrameRate = 60;
         }
     }
 }

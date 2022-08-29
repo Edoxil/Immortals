@@ -6,7 +6,7 @@ namespace Immortals
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-    public sealed class ECS__LerpSpeedProvider : MonoProvider<ECS__LerpSpeedComponent>
+    public sealed class ECS__EnemyTagProvider : MonoProvider<ECS__EnemyTag>
     {
     }
 }
