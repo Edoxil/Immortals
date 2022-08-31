@@ -39,9 +39,19 @@ namespace Immortals
                 _moveDirection = direction.Direction;
 
                 if (_moveDirection.magnitude > 0f)
+                {
+                    if (entity.Has<ECS__IsMovingTag>() == false)
+                        entity.AddComponent<ECS__IsMovingTag>();
+
                     _animationData.BoolData = true;
+                }
                 else
+                {
+                    if (entity.Has<ECS__IsMovingTag>())
+                        entity.RemoveComponent<ECS__IsMovingTag>();
+
                     _animationData.BoolData = false;
+                }
 
 
                 _animationData.EntityID = entity.ID;

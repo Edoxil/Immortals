@@ -718,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
       propertyPath: updateSystems.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
       propertyPath: initializers.Array.data[0]
@@ -735,9 +735,17 @@ PrefabInstance:
     - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
       propertyPath: updateSystems.Array.data[5].system
       value: 
+      objectReference: {fileID: 11400000, guid: 35c5f685f0f9d764d938e180c632a34c, type: 2}
+    - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
+      propertyPath: updateSystems.Array.data[6].system
+      value: 
       objectReference: {fileID: 11400000, guid: 337f0933d8b32794b89c0f96100fdfc1, type: 2}
     - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
       propertyPath: updateSystems.Array.data[5].enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574242274174597474, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}
+      propertyPath: updateSystems.Array.data[6].enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3574242274174597475, guid: 07cf694963cfd5447bf4dfb5a1f236e1, type: 3}

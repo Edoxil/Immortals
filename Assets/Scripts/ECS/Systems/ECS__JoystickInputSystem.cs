@@ -7,8 +7,8 @@ namespace Immortals
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-    [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ECS_JoystickInputSystem))]
-    public sealed class ECS_JoystickInputSystem : UpdateSystem
+    [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ECS__JoystickInputSystem))]
+    public sealed class ECS__JoystickInputSystem : UpdateSystem
     {
         [SerializeField] private ECS_JoystickInputEvent _joystickInputEvent;
         private Vector2 _input;
